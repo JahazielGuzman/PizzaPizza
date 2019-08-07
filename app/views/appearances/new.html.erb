@@ -8,7 +8,7 @@
 <% end %>
 <%= form_for @appearance do |f| %>
 	<%= f.label :guest_id %>
-	<%= f.collection_select :guest_id, @guests, :id, :name %>
+	<%= f.collection_check_boxes :guest_id, @guests, :id, :name %>
 	<% if @episode %>
 		<%= f.hidden_field :episode_id, :value => @episode.id %>
 	<%else%>

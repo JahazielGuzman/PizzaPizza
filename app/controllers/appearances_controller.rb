@@ -10,6 +10,7 @@ class AppearancesController < ApplicationController
 	end
 
 	def create
+		byebug
 		@appearance = Appearance.new(appearance_params)
 
 		if @appearance.valid?
@@ -24,6 +25,6 @@ class AppearancesController < ApplicationController
 	private
 
 	def appearance_params
-		params.require(:appearance).permit(:rating, :guest_id, :episode_id)
+		params.require(:appearance).permit(:rating, :episode_id, :guest_id => [])
 	end
 end
